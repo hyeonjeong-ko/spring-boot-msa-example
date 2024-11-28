@@ -14,9 +14,13 @@ public class ApiApplication {
 
     public static void main(String[] args) {
 
+        // 스프링 빈 컨테이너 객체 리턴
         ConfigurableApplicationContext ctx = SpringApplication.run(Chapter02Application.class, args);
 
+        // 인자에 맞는 스프링 빈 객체 리턴
         Environment env = ctx.getBean(Environment.class);
+
+        // port value 값을 변수에 저장
         String portValue = env.getProperty("server.port");
         log.info("Customized Port : {}", portValue);
 
